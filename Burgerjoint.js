@@ -14,4 +14,20 @@ function combo_price(combo) {
     return is_biggie_size(combo) ? 1.17 * unbiggie_size(combo) + 0.50 : 1.17 * combo;
 }
 
+function empty_order() {
+    return 0;
+}
+
+function add_to_order(combo1, combo2) {
+    return combo1 * 10 + combo2;
+}
+
+function last_combo(order) {
+    return order % 10;
+}
+
+function other_combos(order) {
+    const final_order = order - last_combo(order);
+    return final_order / 10;
+}
 
