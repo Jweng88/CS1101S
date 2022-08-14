@@ -11,7 +11,7 @@ function is_biggie_size(combo) {
 }
 
 function combo_price(combo) {
-    return is_biggie_size(combo) ? 1.17 * combo + 0.50 : 1.17 * combo;
+    return is_biggie_size(combo) ? 1.17 * unbiggie_size(combo) + 0.50 : 1.17 * combo;
 }
 
 
