@@ -10,3 +10,8 @@ function is_biggie_size(combo) {
     return combo > 4;
 }
 
+function combo_price(combo) {
+    return is_biggie_size(combo) ? 1.17 * combo + 0.50 : 1.17 * combo;
+}
+
+
