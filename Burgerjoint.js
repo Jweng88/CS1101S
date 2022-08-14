@@ -1,3 +1,3 @@
 function biggie_size(normal_combo){
-    normal_combo + 4
+    return normal_combo + 4
 }
