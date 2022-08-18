@@ -19,17 +19,25 @@ function edge_row(rune, count) {
     return quarter_turn_left(stackn(count, quarter_turn_right(rune)));
 }
 
-function middle(rune, count) {
-    
+function middle(rune) {
+    const middle_column1 = stack(quarter_turn_right(rune), rune);
+    const middle_column2 = stack(turn_upside_down(rune), quarter_turn_left(rune));
+    return beside(middle_column1, middle_column2);
 }
 
 function persian(rune, count) {
-    column ;
+    const column = stackn(count, rune);
+    const row = quarter_turn_left(stackn(count-2, quarter_turn_right(rune)));
+    const mid = middle(rune);
+    const pat1 = stack_frac(1/(count-1), row, mid);
+    const pat2 = stack_frac((count-1)/count, pat1, row);
+    const pat3 = beside_frac(1/(count-1), column, pat2);
+    const pat4 = beside_frac((count-1)/count, pat3, column);
+    return pat4;
 }
 
 // Tests
-show(edge_column(heart, 7));
-show(edge_row(heart, 7));
+
 show(persian(heart, 7));
 show(persian(make_cross(rcross), 5));
 const paw = from_url("https://i.imgur.com/GJg95B8.png");
