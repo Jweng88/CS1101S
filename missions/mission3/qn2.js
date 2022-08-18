@@ -13,7 +13,7 @@ function cone(n, rune){
 function overlaying(n,rune, c) {
     return c > n
     ? rune
-    : overlay_frac(1/(n-1), scale(c/n, rune), 
+    : overlay_frac(1/n, scale(c/n, rune), 
         overlaying(n, rune, c+1));
 }
 
