@@ -13,10 +13,9 @@ function cone(n, rune){
 function overlaying(n,rune, c) {
     return c > n
     ? rune
-    : overlay_frac(1/3, scale(c/n, rune), overlaying(n, rune, c+1));
+    : overlay_frac(1/(n-1), scale(c/n, rune), overlaying(n, rune, c+1));
 }
 
 // Tests
-//show(overlaying(4, circle));
 show(cone(4, circle));
 hollusion(cone(15, circle));
