@@ -17,11 +17,9 @@ function besiden(n, rune) {
                   besiden(n - 1, rune));
 }
 
-function randstackn(n, rune) {
-    return n === 1
-           ? rune
-           : stack_frac(1 / n, random_color(rune),
-                        randstackn(n - 1, random_color(rune)));
+function carpet(n, m, rune) {
+    return stackn(m,
+                besiden(n, rune));
 }
 
 function randomrow(n, rune) {
